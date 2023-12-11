@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'main_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
-
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme : ThemeData(
-        primaryColor: Color(0xFF000000),
-        scaffoldBackgroundColor: Color(0xFF000000)
+        primaryColor: const Color(0xFF000000),
+        scaffoldBackgroundColor: const Color(0xFF000000)
       ), home: MainScreen());
   }
 }

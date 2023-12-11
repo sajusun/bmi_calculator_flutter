@@ -257,74 +257,7 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ],
           )),
-          Expanded(
-            child: ContainerBox(
-              boxColor: inActiveColor,
-              childWidget: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'Developed with ❤ by Swapnil Srivastava',
-                    style: textStyle1,
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      FloatingActionButton(
-                        elevation: 0,
-                        onPressed: () {
-                          launch('https://swapnilsparsh.github.io');
-                        },
-                        backgroundColor: inActiveColor,
-                        child: Icon(FontAwesomeIcons.portrait,
-                            color: Colors.white),
-                      ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      FloatingActionButton(
-                        elevation: 0,
-                        onPressed: () {
-                          launch('https://github.com/swapnilsparsh');
-                        },
-                        backgroundColor: inActiveColor,
-                        child:
-                            Icon(FontAwesomeIcons.github, color: Colors.white),
-                      ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      FloatingActionButton(
-                        elevation: 0,
-                        onPressed: () {
-                          launch(
-                              'https://www.linkedin.com/in/swapnil-srivastava-sparsh/');
-                        },
-                        backgroundColor: inActiveColor,
-                        child: Icon(FontAwesomeIcons.linkedin,
-                            color: Colors.white),
-                      ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      FloatingActionButton(
-                        elevation: 0,
-                        onPressed: () {
-                          launch('https://twitter.com/swapnilsparsh');
-                        },
-                        backgroundColor: inActiveColor,
-                        child: Icon(FontAwesomeIcons.twitterSquare,
-                            color: Colors.white),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
+
           GestureDetector(
               onTap: () {
                 setState(() {
