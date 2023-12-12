@@ -1,10 +1,9 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'container_box.dart';
 import 'data_container.dart';
-import 'package:url_launcher/url_launcher.dart';
+
 
 const activeColor = Color(0xff0073dd);
 const inActiveColor = Color(0xFF212121);
@@ -18,7 +17,7 @@ class _MainScreenState extends State<MainScreen> {
   Color maleBoxColor = activeColor;
   Color femaleBoxColor = inActiveColor;
   int height = 180;
-  int weight = 20;
+  int weight = 50;
   int age = 25;
   String result = "";
   String resultDetail = "Result here";
@@ -49,9 +48,9 @@ class _MainScreenState extends State<MainScreen> {
     return bmi.toStringAsFixed(1);
   }
 
-  /* String getInterpretation(double bmi) {
+   String getInterpretation(double bmi) {
     if (bmi >= 25.0) {
-      return 'You have higher than normal body weight. Try to excersie more.';
+      return 'You have higher than normal body weight. Try to exercise more.';
     } 
     else if (bmi > 18.5) {
       return 'You have a normal body weight. Good Job!';
@@ -59,13 +58,13 @@ class _MainScreenState extends State<MainScreen> {
     else {
       return 'You have lower than normal body weight. You can eat a bit more.';
     }
-  } */
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("BMI Calculator"),
+        title: Text("BMI CalC"),centerTitle: true,
       ),
       body: Column(
         children: <Widget>[
@@ -129,8 +128,8 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                   Slider(
                     value: height.toDouble(),
-                    min: 120,
-                    max: 220,
+                    min: 10,
+                    max: 300,
                     activeColor: activeColor,
                     inactiveColor: inActiveColor,
                     onChanged: (double newValue) {
@@ -262,7 +261,7 @@ class _MainScreenState extends State<MainScreen> {
               onTap: () {
                 setState(() {
                   result = calculateBmi(weight, height);
-                  /*resultDetail = getInterpretation(bmi);*/
+                  resultDetail = getInterpretation(bmi);
                   showDialog(
                       context: context,
                       builder: (BuildContext contest) {

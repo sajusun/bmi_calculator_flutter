@@ -8,7 +8,7 @@ const textStyle1 = TextStyle(
 
 const textStyle2 = TextStyle(
   color: Color(0xFFffffff),
-  fontSize: 60.0,
+  fontSize: 40.0,
   fontWeight: FontWeight.w900
 );
 
@@ -32,7 +32,7 @@ class DataContainer extends StatelessWidget {
       children: <Widget>[
         Icon(
           icon,
-          size: 80.0,
+          size: 60.0,
           color: Colors.white,
         ),
         SizedBox(height: 15.0,),
