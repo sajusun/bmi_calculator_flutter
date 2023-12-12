@@ -20,7 +20,7 @@ const textStyle3 = TextStyle(
 
 class DataContainer extends StatelessWidget {
             
-  DataContainer({required this.icon, required this.title});
+  const DataContainer({super.key, required this.icon, required this.title});
 
   final IconData icon;
   final String title;
@@ -35,7 +35,7 @@ class DataContainer extends StatelessWidget {
           size: 60.0,
           color: Colors.white,
         ),
-        SizedBox(height: 15.0,),
+        const SizedBox(height: 15.0,),
         Text(
           title,
           style: textStyle1

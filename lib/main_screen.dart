@@ -5,15 +5,17 @@ import 'container_box.dart';
 import 'data_container.dart';
 
 
-const activeColor = Color(0xff0073dd);
+const activeColor = Color(0xffd9b711);
 const inActiveColor = Color(0xFF212121);
 
 class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
+
   @override
-  _MainScreenState createState() => _MainScreenState();
+  MainScreenState createState() => MainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class MainScreenState extends State<MainScreen> {
   Color maleBoxColor = activeColor;
   Color femaleBoxColor = inActiveColor;
   int height = 180;
@@ -64,50 +66,52 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("BMI CalC"),centerTitle: true,
+        title: const Text("BMI CalC"),centerTitle: true,
       ),
       body: Column(
         children: <Widget>[
-          Expanded(
-              child: Row(
-            children: <Widget>[
-              Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      updateBoxColor(1);
-                    });
-                  },
-                  child: ContainerBox(
-                    boxColor: maleBoxColor,
-                    childWidget: DataContainer(
-                        icon: FontAwesomeIcons.male, title: 'MALE'),
-                  ),
-                ),
-              ),
-              Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      updateBoxColor(2);
-                    });
-                  },
-                  child: ContainerBox(
-                    boxColor: femaleBoxColor,
-                    childWidget: DataContainer(
-                        icon: FontAwesomeIcons.female, title: 'FEMALE'),
-                  ),
-                ),
-              ),
-            ],
-          )),
+          // male/female section
+          // Expanded(
+          //     child: Row(
+          //   children: <Widget>[
+          //     Expanded(
+          //       child: GestureDetector(
+          //         onTap: () {
+          //           setState(() {
+          //             updateBoxColor(1);
+          //           });
+          //         },
+          //         child: ContainerBox(
+          //           boxColor: maleBoxColor,
+          //           childWidget: DataContainer(
+          //               icon: FontAwesomeIcons.male, title: 'MALE'),
+          //         ),
+          //       ),
+          //     ),
+          //     Expanded(
+          //       child: GestureDetector(
+          //         onTap: () {
+          //           setState(() {
+          //             updateBoxColor(2);
+          //           });
+          //         },
+          //         child: ContainerBox(
+          //           boxColor: femaleBoxColor,
+          //           childWidget: DataContainer(
+          //               icon: FontAwesomeIcons.female, title: 'FEMALE'),
+          //         ),
+          //       ),
+          //     ),
+          //   ],
+          // )),
+          // height section
           Expanded(
             child: ContainerBox(
               boxColor: inActiveColor,
               childWidget: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text(
+                  const Text(
                     'HEIGHT',
                     style: textStyle1,
                   ),
@@ -120,7 +124,7 @@ class _MainScreenState extends State<MainScreen> {
                         height.toString(),
                         style: textStyle2,
                       ),
-                      Text(
+                      const Text(
                         'cm',
                         style: textStyle1,
                       ),
@@ -142,6 +146,7 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ),
           ),
+          // weight section
           Expanded(
               child: Row(
             children: <Widget>[
@@ -151,7 +156,7 @@ class _MainScreenState extends State<MainScreen> {
                   childWidget: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(
+                      const Text(
                         'WEIGHT',
                         style: textStyle1,
                       ),
@@ -164,7 +169,7 @@ class _MainScreenState extends State<MainScreen> {
                             weight.toString(),
                             style: textStyle2,
                           ),
-                          Text(
+                          const Text(
                             'kg',
                             style: textStyle1,
                           ),
@@ -180,12 +185,10 @@ class _MainScreenState extends State<MainScreen> {
                               });
                             },
                             backgroundColor: activeColor,
-                            child: Icon(FontAwesomeIcons.plus,
+                            child: const Icon(FontAwesomeIcons.plus,
                                 color: Colors.white),
                           ),
-                          SizedBox(
-                            width: 10.0,
-                          ),
+                          const SizedBox(width: 10.0,),
                           FloatingActionButton(
                             onPressed: () {
                               setState(() {
@@ -195,7 +198,7 @@ class _MainScreenState extends State<MainScreen> {
                               });
                             },
                             backgroundColor: activeColor,
-                            child: Icon(FontAwesomeIcons.minus,
+                            child: const Icon(FontAwesomeIcons.minus,
                                 color: Colors.white),
                           ),
                         ],
@@ -204,56 +207,57 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                 ),
               ),
-              Expanded(
-                child: ContainerBox(
-                  boxColor: inActiveColor,
-                  childWidget: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        'AGE',
-                        style: textStyle1,
-                      ),
-                      Text(
-                        age.toString(),
-                        style: textStyle2,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          FloatingActionButton(
-                            onPressed: () {
-                              setState(() {
-                                if (age < 100) {
-                                  age++;
-                                }
-                              });
-                            },
-                            backgroundColor: activeColor,
-                            child: Icon(FontAwesomeIcons.plus,
-                                color: Colors.white),
-                          ),
-                          SizedBox(
-                            width: 10.0,
-                          ),
-                          FloatingActionButton(
-                            onPressed: () {
-                              setState(() {
-                                if (age > 0) {
-                                  age--;
-                                }
-                              });
-                            },
-                            backgroundColor: activeColor,
-                            child: Icon(FontAwesomeIcons.minus,
-                                color: Colors.white),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              // age section
+              // Expanded(
+              //   child: ContainerBox(
+              //     boxColor: inActiveColor,
+              //     childWidget: Column(
+              //       mainAxisAlignment: MainAxisAlignment.center,
+              //       children: <Widget>[
+              //         Text(
+              //           'AGE',
+              //           style: textStyle1,
+              //         ),
+              //         Text(
+              //           age.toString(),
+              //           style: textStyle2,
+              //         ),
+              //         Row(
+              //           mainAxisAlignment: MainAxisAlignment.center,
+              //           children: <Widget>[
+              //             FloatingActionButton(
+              //               onPressed: () {
+              //                 setState(() {
+              //                   if (age < 100) {
+              //                     age++;
+              //                   }
+              //                 });
+              //               },
+              //               backgroundColor: activeColor,
+              //               child: Icon(FontAwesomeIcons.plus,
+              //                   color: Colors.white),
+              //             ),
+              //             SizedBox(
+              //               width: 10.0,
+              //             ),
+              //             FloatingActionButton(
+              //               onPressed: () {
+              //                 setState(() {
+              //                   if (age > 0) {
+              //                     age--;
+              //                   }
+              //                 });
+              //               },
+              //               backgroundColor: activeColor,
+              //               child: Icon(FontAwesomeIcons.minus,
+              //                   color: Colors.white),
+              //             ),
+              //           ],
+              //         ),
+              //       ],
+              //     ),
+              //   ),
+              // ),
             ],
           )),
 
@@ -273,11 +277,11 @@ class _MainScreenState extends State<MainScreen> {
                             child: Container(
                               color: inActiveColor,
                               height: 200.0,
-                              margin: EdgeInsets.all(10.0),
+                              margin: const EdgeInsets.all(10.0),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  Text(
+                                  const Text(
                                     'Your BMI',
                                     style: textStyle1,
                                   ),
@@ -296,16 +300,12 @@ class _MainScreenState extends State<MainScreen> {
                 });
               },
               child: Container(
-                child: Center(
-                  child: Text(
-                    'Calculate',
-                    style: textStyle3,
-                  ),
-                ),
                 width: double.infinity,
                 height: 80.0,
                 color: activeColor,
-                margin: EdgeInsets.only(top: 10.0),
+                margin: const EdgeInsets.only(top: 10.0),
+                child: const Center(
+                  child: Text( 'Calculate', style: textStyle3)),
               ))
         ],
       ),
